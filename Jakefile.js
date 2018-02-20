@@ -115,10 +115,13 @@ task("mkjs", [], function (params) {
 
 	fs.writeFileSync(targetDir + "/plupload.full.min.js", code);
 
+	// Note: we are not interested in updates of I18n!
+	// -> they will be removed; just revert them
+
 	// Add I18n files
-	process.env.auth = "moxieuser:12345";
-	process.env.to = "./js/i18n";
-	jake.Task['i18n'].invoke();
+	// process.env.auth = "moxieuser:12345";
+	// process.env.to = "./js/i18n";
+	// jake.Task['i18n'].invoke();
 });
 
 
